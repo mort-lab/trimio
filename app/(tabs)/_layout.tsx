@@ -1,31 +1,81 @@
 import { Tabs } from "expo-router";
-import React from "react";
-import { View, Pressable, Text, Platform } from "react-native";
+import React, { useMemo } from "react";
+import {
+  View,
+  Pressable,
+  Image,
+  ImageSourcePropType,
+  Platform,
+  StyleSheet,
+  Text,
+} from "react-native";
 import Animated, {
   useAnimatedStyle,
   withSpring,
+  interpolateColor,
 } from "react-native-reanimated";
-import { TabBarIcon } from "@/components/navigation/TabBarIcon";
-import { Colors } from "@/constants/Colors";
-import { useColorScheme } from "@/hooks/useColorScheme";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { icons } from "@/constants";
+import MapScreen from "./map";
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
-function CustomTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
-  const colorScheme = useColorScheme();
-  const activeColor = Colors[colorScheme ?? "light"].tint;
-  const inactiveColor = Colors[colorScheme ?? "light"].tabIconDefault;
-  const insets = useSafeAreaInsets();
+interface TabIconProps {
+  source: ImageSourcePropType;
+  focused: boolean;
+  label: string;
+  tintColor: string;
+}
+
+const TabIcon: React.FC<TabIconProps> = ({
+  source,
+  focused,
+  label,
+  tintColor,
+}) => {
+  const animatedStyle = useAnimatedStyle(() => {
+    const backgroundColor = interpolateColor(
+      focused ? 1 : 0,
+      [0, 1],
+      ["transparent", "rgba(255, 255, 255, 0.2)"]
+    );
+
+    return {
+      backgroundColor,
+      transform: [{ scale: withSpring(focused ? 1.1 : 1) }],
+    };
+  });
 
   return (
-    <View
-      className="flex-row bg-white dark:bg-gray-800 shadow-lg"
-      style={{
-        paddingBottom: Platform.OS === "ios" ? insets.bottom : 6,
-      }}
+    <Animated.View
+      style={[styles.iconContainer, animatedStyle]}
+      accessibilityLabel={label}
     >
+      <Image
+        source={source}
+        tintColor={tintColor}
+        resizeMode="contain"
+        style={styles.icon}
+      />
+      <Text style={[styles.label, { color: tintColor }]}>{label}</Text>
+    </Animated.View>
+  );
+};
+
+function CustomTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
+  const insets = useSafeAreaInsets();
+
+  const tabBarStyle = useMemo(
+    () => [
+      styles.tabBar,
+      { paddingBottom: Platform.OS === "ios" ? insets.bottom : 10 },
+    ],
+    [insets.bottom]
+  );
+
+  return (
+    <View style={tabBarStyle}>
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
         const label = options.title ?? route.name;
@@ -43,12 +93,6 @@ function CustomTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
           }
         };
 
-        const animatedStyle = useAnimatedStyle(() => {
-          return {
-            transform: [{ scale: withSpring(isFocused ? 1.2 : 1) }],
-          };
-        });
-
         return (
           <AnimatedPressable
             key={index}
@@ -57,26 +101,20 @@ function CustomTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
             accessibilityLabel={options.tabBarAccessibilityLabel}
             testID={options.tabBarTestID}
             onPress={onPress}
-            style={animatedStyle}
-            className="flex-1 items-center justify-center py-2"
+            style={styles.tabButton}
           >
-            <TabBarIcon
-              name={
+            <TabIcon
+              source={
                 options.tabBarIcon?.({
                   focused: isFocused,
-                  color: isFocused ? activeColor : inactiveColor,
-                })?.props.name || "circle"
+                  color: "",
+                  size: 24,
+                }) as ImageSourcePropType
               }
-              color={isFocused ? activeColor : inactiveColor}
+              focused={isFocused}
+              label={label}
+              tintColor={isFocused ? "#FFFFFF" : "#CCCCCC"}
             />
-            <Text
-              className={`text-xs mt-1 ${
-                isFocused ? "font-bold" : "font-normal"
-              }`}
-              style={{ color: isFocused ? activeColor : inactiveColor }}
-            >
-              {label}
-            </Text>
           </AnimatedPressable>
         );
       })}
@@ -84,13 +122,51 @@ function CustomTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   );
 }
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+const styles = StyleSheet.create({
+  tabBar: {
+    flexDirection: "row",
+    backgroundColor: "#333333",
+    borderRadius: 25,
+    marginHorizontal: 20,
+    marginBottom: 10,
+    paddingTop: 10,
+    height: 80,
+    justifyContent: "space-around",
+    alignItems: "center",
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+  },
+  tabButton: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 5,
+  },
+  iconContainer: {
+    borderRadius: 20,
+    padding: 6,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  icon: {
+    width: 24,
+    height: 24,
+  },
+  label: {
+    fontSize: 12,
+    marginTop: 2,
+  },
+});
 
+export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+        tabBarActiveTintColor: "white",
+        tabBarInactiveTintColor: "#CCCCCC",
+        tabBarShowLabel: true,
         headerShown: false,
       }}
       tabBar={(props) => <CustomTabBar {...props} />}
@@ -99,45 +175,29 @@ export default function TabLayout() {
         name="index"
         options={{
           title: "Home",
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? "home" : "home-outline"}
-              color={color}
-            />
-          ),
+          tabBarIcon: ({ focused }) => icons.home,
         }}
       />
       <Tabs.Screen
         name="map"
         options={{
           title: "Map",
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? "map" : "map-outline"} color={color} />
-          ),
+          tabBarIcon: ({ focused }) => icons.home,
         }}
       />
+
       <Tabs.Screen
         name="appointments"
         options={{
           title: "Appointments",
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? "calendar" : "calendar-outline"}
-              color={color}
-            />
-          ),
+          tabBarIcon: ({ focused }) => icons.chat,
         }}
       />
       <Tabs.Screen
         name="settings"
         options={{
           title: "Settings",
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? "settings" : "settings-outline"}
-              color={color}
-            />
-          ),
+          tabBarIcon: ({ focused }) => icons.profile,
         }}
       />
     </Tabs>

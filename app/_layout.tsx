@@ -12,11 +12,11 @@ import { useColorScheme } from "@/hooks/useColorScheme";
 import { useAuthStore } from "../store/authStore";
 import axios from "axios";
 
-// Evita que la splash screen se oculte automáticamente antes de que se carguen los assets.
+// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
-// Reemplaza esto con la IP de tu iPhone
-const API_URL = "http://192.168.1.55:3003"; // Ejemplo, usa tu IP real
+// Replace this with your iPhone's IP
+const API_URL = "http://192.168.1.55:3003"; // Example, use your real IP
 
 axios.defaults.baseURL = API_URL;
 
@@ -42,7 +42,13 @@ export default function RootLayout() {
   const router = useRouter();
 
   const [fontsLoaded] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+    "Jakarta-Bold": require("../assets/fonts/PlusJakartaSans-Bold.ttf"),
+    "Jakarta-ExtraBold": require("../assets/fonts/PlusJakartaSans-ExtraBold.ttf"),
+    "Jakarta-ExtraLight": require("../assets/fonts/PlusJakartaSans-ExtraLight.ttf"),
+    "Jakarta-Light": require("../assets/fonts/PlusJakartaSans-Light.ttf"),
+    "Jakarta-Medium": require("../assets/fonts/PlusJakartaSans-Medium.ttf"),
+    Jakarta: require("../assets/fonts/PlusJakartaSans-Regular.ttf"),
+    "Jakarta-SemiBold": require("../assets/fonts/PlusJakartaSans-SemiBold.ttf"),
   });
 
   const initializeAuth = useAuthStore((state) => state.initializeAuth);
@@ -55,7 +61,7 @@ export default function RootLayout() {
       }
     }
     prepare();
-  }, [fontsLoaded]);
+  }, [fontsLoaded, initializeAuth]);
 
   useEffect(() => {
     if (fontsLoaded && !user) {
