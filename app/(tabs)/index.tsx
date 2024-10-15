@@ -47,7 +47,7 @@ export default function HomeScreen() {
   return (
     <SafeAreaView className="flex-1 bg-gray-100">
       <ScrollView className="flex-1 p-5">
-        <View className="w-full mb-6">
+        <View className="w-full">
           <Text className="text-2xl font-bold mb-4">
             Welcome, {user?.username}!
           </Text>
@@ -71,7 +71,7 @@ export default function HomeScreen() {
           <Button title="Logout" onPress={handleLogout} />
         </View>
 
-        <View className="flex-1">
+        <View className="mt-8">
           <Text className="text-xl font-bold mb-4">Nearby Barbershops</Text>
           <NearbyBarbershops />
         </View>
