@@ -1,0 +1,260 @@
+[
+  {
+    "barbershopId": "b8b913e4-3feb-4ac6-ad63-b4f9ee969852",
+    "barbershopName": "Versia Barbershop",
+    "barbershopAddress": "Avenida de la Libertad 10",
+    "barbershopCity": "Donostia",
+    "barbershopState": "Gipuzkoa",
+    "barbershopZipCode": "20004",
+    "barbershopLatitude": 43.3192,
+    "barbershopLongitude": -1.9844,
+    "barbershopImages": [],
+    "services": [
+      {
+        "id": "7effb40d-64b3-4a6b-903c-1e56f6ff2780",
+        "serviceName": "Corte de cabello",
+        "description": "Corte de cabello profesional con tijeras",
+        "price": 25.99,
+        "duration": 30,
+        "createdAt": "2024-10-11T16:50:09.991Z",
+        "updatedAt": "2024-10-11T16:50:09.991Z",
+        "barbershopId": "b8b913e4-3feb-4ac6-ad63-b4f9ee969852",
+        "category": "Cortes",
+        "isActive": true,
+        "deletedAt": null
+      }
+    ],
+    "barberProfiles": [
+      {
+        "userId": "aed1be5b-e6b7-4664-a45f-dd2c854c4f96",
+        "barberRole": "OWNER",
+        "barberName": null
+      }
+    ]
+  },
+  {
+    "barbershopId": "02e30c10-5663-4333-a0b9-e2024c11787a",
+    "barbershopName": "Berio Barbershop",
+    "barbershopAddress": "Calle Urbieta 38",
+    "barbershopCity": "Donostia",
+    "barbershopState": "Gipuzkoa",
+    "barbershopZipCode": "20006",
+    "barbershopLatitude": 43.3156,
+    "barbershopLongitude": -1.9811,
+    "barbershopImages": [],
+    "services": [
+      {
+        "id": "9a7b3c1d-2e4f-5g6h-7i8j-9k0l1m2n3o4p",
+        "serviceName": "Afeitado clásico",
+        "description": "Afeitado tradicional con navaja y toalla caliente",
+        "price": 20.0,
+        "duration": 25,
+        "createdAt": "2024-10-15T10:00:00.000Z",
+        "updatedAt": "2024-10-15T10:00:00.000Z",
+        "barbershopId": "02e30c10-5663-4333-a0b9-e2024c11787a",
+        "category": "Afeitados",
+        "isActive": true,
+        "deletedAt": null
+      }
+    ],
+    "barberProfiles": [
+      {
+        "userId": "83d6f8bb-4e02-4865-94c3-71268e49e55f",
+        "barberRole": "OWNER",
+        "barberName": "Martin Irurozki"
+      }
+    ]
+  },
+  {
+    "barbershopId": "9b6c97db-8137-4973-a2b6-0c5ca94b97ea",
+    "barbershopName": "Mort Barbershop",
+    "barbershopAddress": "Paseo de la Concha 12",
+    "barbershopCity": "Donostia",
+    "barbershopState": "Gipuzkoa",
+    "barbershopZipCode": "20007",
+    "barbershopLatitude": 43.3173,
+    "barbershopLongitude": -1.9876,
+    "barbershopImages": [],
+    "services": [
+      {
+        "id": "b0119cb4-13df-4f50-bd19-aa60f7d5c17e",
+        "serviceName": "Corte de cabello",
+        "description": "Corte de cabello profesional con tijeras",
+        "price": 25.99,
+        "duration": 30,
+        "createdAt": "2024-10-13T18:24:33.799Z",
+        "updatedAt": "2024-10-13T18:24:33.799Z",
+        "barbershopId": "9b6c97db-8137-4973-a2b6-0c5ca94b97ea",
+        "category": "Cortes",
+        "isActive": true,
+        "deletedAt": null
+      }
+    ],
+    "barberProfiles": [
+      {
+        "userId": "83d6f8bb-4e02-4865-94c3-71268e49e55f",
+        "barberRole": "OWNER",
+        "barberName": "Martin Irurozki"
+      }
+    ]
+  },
+  {
+    "barbershopId": "ab7c81f5-1950-4ec2-a085-845670c40826",
+    "barbershopName": "Mort Barbershop",
+    "barbershopAddress": "Calle Mayor 15",
+    "barbershopCity": "Donostia",
+    "barbershopState": "Gipuzkoa",
+    "barbershopZipCode": "20003",
+    "barbershopLatitude": 43.3235,
+    "barbershopLongitude": -1.9845,
+    "barbershopImages": [],
+    "services": [
+      {
+        "id": "5e6f7g8h-9i0j-1k2l-3m4n-5o6p7q8r9s0t",
+        "serviceName": "Corte y peinado",
+        "description": "Corte de cabello con lavado y peinado",
+        "price": 30.0,
+        "duration": 45,
+        "createdAt": "2024-10-15T11:00:00.000Z",
+        "updatedAt": "2024-10-15T11:00:00.000Z",
+        "barbershopId": "ab7c81f5-1950-4ec2-a085-845670c40826",
+        "category": "Cortes",
+        "isActive": true,
+        "deletedAt": null
+      }
+    ],
+    "barberProfiles": [
+      {
+        "userId": "2eab2ea1-bfbb-4c17-a3ba-194021df7a89",
+        "barberRole": "OWNER",
+        "barberName": "martin"
+      }
+    ]
+  },
+  {
+    "barbershopId": "51bc7439-1b6f-48bd-b531-00498af391c0",
+    "barbershopName": "Mort Barbershop",
+    "barbershopAddress": "Boulevard Zumardia 8",
+    "barbershopCity": "Donostia",
+    "barbershopState": "Gipuzkoa",
+    "barbershopZipCode": "20003",
+    "barbershopLatitude": 43.3222,
+    "barbershopLongitude": -1.9852,
+    "barbershopImages": [],
+    "services": [
+      {
+        "id": "1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p",
+        "serviceName": "Arreglo de barba",
+        "description": "Recorte y perfilado de barba",
+        "price": 15.0,
+        "duration": 20,
+        "createdAt": "2024-10-15T12:00:00.000Z",
+        "updatedAt": "2024-10-15T12:00:00.000Z",
+        "barbershopId": "51bc7439-1b6f-48bd-b531-00498af391c0",
+        "category": "Barbas",
+        "isActive": true,
+        "deletedAt": null
+      }
+    ],
+    "barberProfiles": [
+      {
+        "userId": "2eab2ea1-bfbb-4c17-a3ba-194021df7a89",
+        "barberRole": "OWNER",
+        "barberName": "martin"
+      }
+    ]
+  },
+  {
+    "barbershopId": "b277d7ec-d0b5-42af-9b83-cc63471fc83c",
+    "barbershopName": "Mort Barberia",
+    "barbershopAddress": "Calle Hernani 27",
+    "barbershopCity": "Donostia",
+    "barbershopState": "Gipuzkoa",
+    "barbershopZipCode": "20004",
+    "barbershopLatitude": 43.3207,
+    "barbershopLongitude": -1.9817,
+    "barbershopImages": [],
+    "services": [
+      {
+        "id": "8f2cc026-d828-48f4-b641-02532a071a7a",
+        "serviceName": "Corte de cabello",
+        "description": "Corte de cabello profesional con tijeras",
+        "price": 25.99,
+        "duration": 30,
+        "createdAt": "2024-10-14T20:48:41.071Z",
+        "updatedAt": "2024-10-14T20:48:41.071Z",
+        "barbershopId": "b277d7ec-d0b5-42af-9b83-cc63471fc83c",
+        "category": "Cortes",
+        "isActive": true,
+        "deletedAt": null
+      }
+    ],
+    "barberProfiles": [
+      {
+        "userId": "1ac6d5ff-6956-454d-818e-39dae9b86f06",
+        "barberRole": "OWNER",
+        "barberName": "mort_lab"
+      }
+    ]
+  },
+  {
+    "barbershopId": "fa268a51-deaa-46ca-8a0a-c73c1a9dba8b",
+    "barbershopName": "Tigre Barbershop",
+    "barbershopAddress": "Calle San Martín 45",
+    "barbershopCity": "Donostia",
+    "barbershopState": "Gipuzkoa",
+    "barbershopZipCode": "20005",
+    "barbershopLatitude": 43.3178,
+    "barbershopLongitude": -1.9829,
+    "barbershopImages": [],
+    "services": [
+      {
+        "id": "7q8r9s0t-1u2v-3w4x-5y6z-7a8b9c0d1e2f",
+        "serviceName": "Corte de pelo infantil",
+        "description": "Corte de pelo para niños hasta 12 años",
+        "price": 18.0,
+        "duration": 25,
+        "createdAt": "2024-10-15T13:00:00.000Z",
+        "updatedAt": "2024-10-15T13:00:00.000Z",
+        "barbershopId": "fa268a51-deaa-46ca-8a0a-c73c1a9dba8b",
+        "category": "Cortes",
+        "isActive": true,
+        "deletedAt": null
+      }
+    ],
+    "barberProfiles": []
+  },
+  {
+    "barbershopId": "ca022a76-5845-41b2-9db7-ed43bc88908e",
+    "barbershopName": "Martin",
+    "barbershopAddress": "Calle Miracruz 36",
+    "barbershopCity": "Donostia",
+    "barbershopState": "Gipuzkoa",
+    "barbershopZipCode": "20001",
+    "barbershopLatitude": 43.3265,
+    "barbershopLongitude": -1.9733,
+    "barbershopImages": [],
+    "services": [
+      {
+        "id": "a9f53799-8976-40d7-9480-a5b7eabff6bf",
+        "serviceName": "Corte Clinico",
+        "description": "que tal",
+        "price": 22,
+        "duration": 30,
+        "createdAt": "2024-10-14T20:13:35.443Z",
+        "updatedAt": "2024-10-14T20:13:43.325Z",
+        "barbershopId": "ca022a76-5845-41b2-9db7-ed43bc88908e",
+        "category": "holamundo",
+        "isActive": false,
+        "deletedAt": null
+      }
+    ],
+    "barberProfiles": [
+      {
+        "userId": "1ac6d5ff-6956-454d-818e-39dae9b86f06",
+        "barberRole": "BARBER",
+        "barberName": "mort_lab"
+      }
+    ]
+  }
+]

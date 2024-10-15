@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "latitude": 43.3224,
+    "longitude": -1.9856,
+    "price": 25,
+    "title": "Barbería Tradicional La Concha",
+    "numberOfStars": 5,
+    "rating": 4.8,
+    "image": "https://news.airbnb.com/wp-content/uploads/sites/4/2019/06/PJM020719Q202_Luxe_WanakaNZ_LivingRoom_0264-LightOn_R1.jpg?fit=2500%2C1666"
+  },
+  {
+    "id": 2,
+    "latitude": 43.316,
+    "longitude": -1.981,
+    "price": 30,
+    "title": "Barbería Modernista en Amara",
+    "numberOfStars": 4,
+    "rating": 4.5,
+    "image": "https://media.cntraveler.com/photos/5d112d50c4d7bd806dbc00a4/16:9/w_2560%2Cc_limit/airbnb%2520luxe.jpg"
+  },
+  {
+    "id": 3,
+    "latitude": 43.312,
+    "longitude": -1.9917,
+    "price": 20,
+    "title": "Barbería Clásica en el Antiguo",
+    "numberOfStars": 3,
+    "rating": 4.2,
+    "image": "https://a0.muscache.com/pictures/27c09c24-e29d-4cd9-8c28-edfa84868da4.jpg"
+  },
+  {
+    "id": 4,
+    "latitude": 43.3277,
+    "longitude": -1.9713,
+    "price": 35,
+    "title": "Barbería de Lujo en Gros",
+    "numberOfStars": 5,
+    "rating": 4.9,
+    "image": "https://a0.muscache.com/im/pictures/b61ba60e-7b9e-48b5-9036-aacc2579a39d.jpg"
+  },
+  {
+    "id": 5,
+    "latitude": 43.3212,
+    "longitude": -1.9734,
+    "price": 28,
+    "title": "Barbería Vintage en el Centro",
+    "numberOfStars": 4,
+    "rating": 4.6,
+    "image": "https://pyxis.nymag.com/v1/imgs/5f1/db3/bce7fbac042b55a47b4d4260428262c17d-23-private-swimming-hole-cornwall-ct.rsquare.w600.jpg"
+  }
+]
